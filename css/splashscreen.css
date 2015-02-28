@@ -71,7 +71,7 @@ div.enter a:visited {
 	color: blue;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 800px) {
   
   #splashscreen {
     width: 320px;
@@ -114,7 +114,6 @@ div.enter a:visited {
     margin-left: auto;
     margin-right: auto;
     padding:1px;
-    /*height: 2.2em;*/
     max-width: 4.6em;
     border:1px solid #021a40;
     background-color:#ff0;
