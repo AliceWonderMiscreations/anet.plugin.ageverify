@@ -4,9 +4,9 @@ class anetAgeverify {
   private $dom;
   private $pdo;
   private $minage = 18;
-  private $enterimage = '/img/plugins/anet.plugin.ageverify/AdultSplashAgeV.png';
+  private $enterimage = '/img/anet.plugin.ageverify/AdultSplashAgeV.png';
   private $exitlink = 'http://www.gogooligans.com/';
-  private $rtalogo = '/img/plugins/anet.plugin.ageverify/RTAlogo.gif';
+  private $rtalogo = '/img/anet.plugin.ageverify/RTAlogo.gif';
   
   private function settings() {
     $cache = new wrapCache();
