@@ -11,7 +11,7 @@ function clickAgeVerify() {
         url: ajaxpath + 'splashscreen.php',
         data: postdata,
         dataType: 'text',
-        success: function (text) {
+        success: function () {
             $('#splashscreen').hide("slow");
         }
     });
