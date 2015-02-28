@@ -4,14 +4,48 @@ class anetAgeverify {
   private $dom;
   private $pdo;
   private $minage = 18;
-  private $enterimage;
+  private $enterimage = '/img/anet.plugin.ageverify/AdultSplashAgeV.png';
   private $exitlink = 'http://www.gogooligans.com/';
-  private $rtalogo = '/siteimages/175x83_RTA-5042-1996-1400-1577-RTA.gif';
+  private $rtalogo = '/img/anet.plugin.ageverify/RTAlogo.gif';
   
   private function settings() {
-    $this->minage = 18;
-    $this->enterimage = '/siteimages/AdultSplashAgeV.png';
-    //$this->exitlink = 'http://lmgtfy.com/?q=My+Little+Pony';
+    $cache = new wrapCache();
+    $APC = 'anet.plugin.ageverify.settings';
+    if(! $settings = $cache->fetch($APC)) {
+      $settings = array();
+      $sql = "SELECT settings FROM plugins WHERE vend='anet' AND name='ageverify'";
+      $q = $this->pdo->query($sql);
+      if($rs = $q->fetchAll()) {
+        $string = $rs[0]->settings;
+        if(strlen($string) > 0) {
+          $a = explode('|', $string);
+          $n = count($a);
+          for($i=0; $i<$n; $i++) {
+            $t = $a[$i];
+            $b = explode('=', $t);
+            if(count($b) > 0) {
+              $key = trim($b[0]); $val = trim($b[1]);
+              if(strlen($key) > 0) {
+                $settings[$key] = $val;
+              }
+            }
+          }
+        }
+      }
+      $cache->store($APC, $settings, (60 * 60 * 24));
+    }
+    if(isset($settings['minage'])) {
+      $minage = round(0 + $settings['minage']);
+      if($minage > 18) {
+        $this->minage = $minage;
+      }
+    }
+    if(isset($settings['exitlink'])) {
+      //FIXME validate URL
+      $exitlink = trim($settings['exitlink']);
+      $this->exitlink = $exitlink;
+    }
+    //FIXME alternate image,rtalogo resource
   }
   
   public function splashscreen() {
