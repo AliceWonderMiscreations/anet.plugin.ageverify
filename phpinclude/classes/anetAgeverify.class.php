@@ -95,8 +95,6 @@ class anetAgeverify {
     $anchor->setAttribute('rel', 'nofollow');
     $img = $this->dom->createElement('img');
     $img->setAttribute('src', $this->rtalogo);
-    $img->setAttribute('width', '175');
-    $img->setAttribute('height', '83');
     $img->setAttribute('alt', 'RTALabel Logo');
     $img->setAttribute('class', 'RTA');
     $anchor->appendChild($img);
