@@ -6,7 +6,7 @@ if(isset($_POST['csrf'])) {
   if(isset($_SESSION['csrfkey'])) {
     $key = $_SESSION['csrfkey'];
     if(validateCSRF($pdo, $key, $token)) {
-      $_SESSION['agev'] = 'true';
+      $_SESSION['anet.agev'] = 'true';
     }
   }
 }

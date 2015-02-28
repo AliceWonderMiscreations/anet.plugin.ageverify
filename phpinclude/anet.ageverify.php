@@ -3,7 +3,7 @@
 /* check for age */
 $html5->rtalabel();
 if(! $spiderAgent) {
-  if(! isset($_SESSION['agev'])) {
+  if(! isset($_SESSION['anet.agev'])) {
     $splash = new anetAgeverify($dom, $pdo);
     $splash->splashscreen();
     $scriptManager->addStyle('splashscreen.css', 'anet.plugin.ageverify');
