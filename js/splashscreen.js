@@ -3,7 +3,7 @@
 function clickAgeVerify() {
     "use strict";
     var ajaxpath, csrf, postdata;
-    ajaxpath = $('#content').attr('data-ajax') + 'anet.plugin.ageverify/';
+    ajaxpath = $('#content').attr('data-ajax') + 'plugins/anet.plugin.ageverify/';
     csrf = $('#content').attr('data-csrf');
     postdata = { csrf: csrf };
     $.ajax({
