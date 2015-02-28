@@ -3,7 +3,7 @@
 function clickAgeVerify() {
     "use strict";
     var ajaxpath, csrf, postdata;
-    ajaxpath = $('#content').attr('data-ajax');
+    ajaxpath = $('#content').attr('data-ajax') + 'anet.plugin.ageverify/';
     csrf = $('#content').attr('data-csrf');
     postdata = { csrf: csrf };
     $.ajax({
@@ -11,7 +11,7 @@ function clickAgeVerify() {
         url: ajaxpath + 'splashscreen.php',
         data: postdata,
         dataType: 'text',
-        success: function () {
+        success: function (text) {
             $('#splashscreen').hide("slow");
         }
     });
