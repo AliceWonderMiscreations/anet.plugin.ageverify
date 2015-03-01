@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+  <vendor code="anet">Alice Wonder Miscreations</vendor>
+  <type>plugin</type>
+  <name>ageverify</name>
+  <license>MIT</license>
+  <description>Age Verification Plugin for AliceNet</description>
+  <homepage>https://github.com/AliceWonderMiscreations/anet.plugin.ageverify</homepage>
+  <git>
+    <branch>master</branch>
+    <clone>https://github.com/AliceWonderMiscreations/anet.plugin.ageverify.git</clone>
+  </git>
+  <script type="post">anet.ageverify.php</script>
+</plugin>
