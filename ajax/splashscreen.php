@@ -1,5 +1,4 @@
 <?php
-require_once('site.configuration.inc.php');
 header('Content-Type: text/plain');
 if(isset($_POST['csrf'])) {
   $token = $_POST['csrf'];
